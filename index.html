@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations NFC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .info-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenue sur votre site NFC</h1>
+    <div class="info-box">
+        <p><strong>Informations contenues dans votre carte NFC :</strong></p>
+        <p id="nfc-info">Aucune information trouvée.</p>
+    </div>
+
+    <script>
+        // Cette section simule l'affichage des données lues depuis la carte NFC
+        document.getElementById('nfc-info').textContent = "Voici les données lues depuis la carte NFC!";
+    </script>
+</body>
+</html>
