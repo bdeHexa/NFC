@@ -32,8 +32,23 @@
     </div>
 
     <script>
-        // Cette section simule l'affichage des données lues depuis la carte NFC
-        document.getElementById('nfc-info').textContent = "Voici les données lues depuis la carte NFC!";
+        // Fonction pour récupérer les paramètres de l'URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Récupérer le paramètre "data" de l'URL
+        var nfcData = getUrlParameter('data');
+
+        // Afficher les données lues depuis la carte NFC
+        if (nfcData) {
+            document.getElementById('nfc-info').textContent = nfcData;
+        } else {
+            document.getElementById('nfc-info').textContent = "Aucune donnée trouvée.";
+        }
     </script>
 </body>
 </html>
